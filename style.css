@@ -1,0 +1,166 @@
+body{
+    background-color: #121212;
+}
+
+@keyframes Olas {
+  0%   {background-color: #2563EB;}
+  33%  {background-color: #059669;}
+  66%  {background-color: #DC2626;}
+  100%  {background-color: #2563EB;}
+}
+
+main{
+    background-image: radial-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0));
+    background-color: #2563EB;
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    border-radius: 2rem;
+    animation-name: Olas;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+    box-shadow: 0 0 30px #A3B3C9;
+}
+
+h4{
+    margin: 2px;
+    font-weight: bolder;
+    font-style: oblique;
+}
+
+li{
+    list-style: none;
+}
+
+.Render{
+    display: flex;
+}
+
+.Descargar{
+    position: absolute;
+    margin: 25px;
+}
+
+.BarraDeBotones{
+    color: white;
+    position: absolute;
+    margin: 25px;
+    right: 8%;
+    top: 0%;
+}
+
+.BotonBar{
+    background-color: #101010;
+    border-radius: 1rem;
+    color: #F1F5F9;
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+    box-shadow: 0 0 10px #A3B3C9;
+}
+
+.BotonBar:hover {
+    background-color: #1E1E1E;
+}
+
+.ContenidoBut{
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 30px;
+    margin: 2px;
+    display: flex;
+    background-color: #101010;
+    border-radius: 1rem;
+    color: #F1F5F9;
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+    box-shadow: 0 0 10px #A3B3C9;
+}
+
+input[type='number']{
+    width: 30px;
+}
+
+.active{
+    display: block;
+}
+
+.hidden{
+    display: none;
+}
+
+.BarTex{
+    border-radius: 2rem;
+    position: absolute;
+    width: 250px;
+    height: 300px;
+    overflow: auto;
+    right: 9%;
+    top: 38%;
+    &::-webkit-scrollbar {
+    width: 15px;
+    background: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+    background-color: #F1F5F9;
+    border-radius: 5px;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+    background-color: #A3B3C9;
+    }
+}
+
+.TexturaPrev{
+    border-radius: 1em;
+    color: white;
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column-reverse;
+    background-color: #1E1E1E;
+    padding: 5px;
+    margin: 6px;
+    width: 200px;
+    height: 180px;
+    box-shadow: 0 0 5px #A3B3C9;
+}
+
+.MostrarTextura{
+    width: 100px;
+    height: 100px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #101010;
+}
+
+.SubirText{
+    height: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 30px;
+    margin: 2px;
+    display: flex;
+    background-color: #101010;
+    border-radius: 1rem;
+    color: #F1F5F9;
+    padding: 5px 20px 5px 20px;
+    text-align: center;
+    font-size: 16px;
+    box-shadow: 0 0 10px #A3B3C9;
+}
+
+/*CELULAR*/
+@media(max-width: 767px){
+
+}
+
+/*TABLET*/
+@media(max-width: 991px) and (min-width: 768px){
+    
+}
