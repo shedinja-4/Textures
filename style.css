@@ -9,17 +9,45 @@ body{
   100%  {background-color: #2563EB;}
 }
 
+.espacio{
+    height: 1px;
+    background-color: #A3B3C9;
+}
+
 main{
+    position: relative;
     background-image: radial-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0));
     background-color: #2563EB;
-    display: flex;
-    align-self: center;
-    justify-self: center;
-    border-radius: 2rem;
     animation-name: Olas;
     animation-duration: 30s;
     animation-iteration-count: infinite;
     box-shadow: 0 0 30px #A3B3C9;
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    border-radius: 2rem;
+}
+
+header.BarraArriba{
+    display: flex;
+    position: absolute;
+    width: 80%;
+    left: 0%;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-top: 25px;
+    margin-left: 25px;
+}
+
+footer.BarraAbajo{
+    display: flex;
+    position: absolute;
+    width: 40%;
+    top: 15%;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 8vh;
+    margin-left: 25px;
 }
 
 h4{
@@ -28,17 +56,33 @@ h4{
     font-style: oblique;
 }
 
+h6{
+    margin: 4px;
+    font-weight: bolder;
+    font-style: oblique;
+}
+
 li{
     list-style: none;
+}
+
+ul{
+    list-style: none;
+    padding-left: 20px;
+    margin-top: 0px;
 }
 
 .Render{
     display: flex;
 }
 
-.Descargar{
+.ButStandar{
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
     position: absolute;
     margin: 25px;
+    bottom: 16%;
 }
 
 .BarraDeBotones{
@@ -55,8 +99,17 @@ li{
     color: #F1F5F9;
     padding: 10px;
     text-align: center;
-    font-size: 18px;
+    font-size: clamp(0.5rem, 1.1rem, 2rem);
     box-shadow: 0 0 10px #A3B3C9;
+    width: fit-content;
+    margin-right: 10px;
+}
+
+.ButInside{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 0px;
 }
 
 .BotonBar:hover {
@@ -64,20 +117,35 @@ li{
 }
 
 .ContenidoBut{
-    height: 20px;
+    position: absolute;
     display: flex;
-    align-items: center;
     justify-content: space-around;
-    gap: 30px;
-    margin: 2px;
-    display: flex;
+    flex-direction: column;
+    column-gap: 30px;
+    margin-top: 5px;
+    margin-left: 20px;
     background-color: #101010;
-    border-radius: 1rem;
+    border-radius: 0rem 1rem 1rem 1rem;
     color: #F1F5F9;
     padding: 10px;
     text-align: center;
     font-size: 18px;
+    width: fit-content;
     box-shadow: 0 0 10px #A3B3C9;
+    z-index: 100;
+}
+
+.ColorInput{
+    width: 55px;
+}
+
+.ShowColor{
+    border-color: black;
+    border-style: double;
+    border-width: 5px;
+    width: 12px;
+    height: 12px;
+    background-color: #ffffff;
 }
 
 input[type='number']{
@@ -93,13 +161,16 @@ input[type='number']{
 }
 
 .BarTex{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
     border-radius: 2rem;
     position: absolute;
     width: 250px;
-    height: 300px;
+    height: 80%;
     overflow: auto;
-    right: 9%;
-    top: 38%;
+    right: 1%;
+
     &::-webkit-scrollbar {
     width: 15px;
     background: transparent;
@@ -124,18 +195,20 @@ input[type='number']{
     background-color: #1E1E1E;
     padding: 5px;
     margin: 6px;
-    width: 200px;
-    height: 180px;
+    width: 13vw;
+    height: 20vw;
     box-shadow: 0 0 5px #A3B3C9;
 }
 
 .MostrarTextura{
+    border-radius: 1rem;
     width: 100px;
     height: 100px;
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
     background-color: #101010;
+    margin: 10px 0px;
 }
 
 .SubirText{
@@ -151,8 +224,21 @@ input[type='number']{
     color: #F1F5F9;
     padding: 5px 20px 5px 20px;
     text-align: center;
-    font-size: 16px;
+    font-size: clamp(0.2rem, 1rem, 1.5rem);
     box-shadow: 0 0 10px #A3B3C9;
+}
+
+.ImgEdt{
+    width: 20vh;
+    height: 20vh;
+    border: double;
+    border-color: black;
+    border-width: 2vh;
+    margin-bottom: 1vh;
+}
+
+.FilterSld{
+    min-width: 20vw;
 }
 
 /*CELULAR*/

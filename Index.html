@@ -16,56 +16,102 @@
 </head>
 <body>
     <main>
-        <form class="Descargar">
-            <label class="BotonBar" for="ArchivoOBJ" style="color: white;">Importar OBJ</label>
+        <header class="BarraArriba">
+            <label class="BotonBar" for="ArchivoOBJ" style="color: white;">Import OBJ</label>
             <input type="file" id="ArchivoOBJ" style="display:none;">
-            <label class="BotonBar" for="ArchivoFBX" style="color: white;">Importar FBX</label>
+            <label class="BotonBar" for="ArchivoFBX" style="color: white;">Import FBX</label>
             <input type="file" id="ArchivoFBX" style="display:none;">
-        </form>
-        <section class="BarraDeBotones">
-             <li class="Grilla">
-                <div class="BotonBar" onclick="Barra()">Grilla</div>
-                <ul class="ContGril" id="Barra">
-                    <li class="ContenidoBut"><h6>Mostrar</h6><input type="checkbox" id="GrlVis"></li>
-                    <li class="ContenidoBut"><h6>Tamaño</h6><input type="number" min="0" value="10" id="TamGrl"></li>
-                    <li class="ContenidoBut"><h6>Divisiones</h6><input type="number" min="0" value="10" id="DivGrl"></li>
+            <li class="FlexDown">
+                <div class="BotonBar DropMenu">Grill</div>
+                <ul class="ContenidoBut hidden">
+                    <li class="ButInside"><h6>Show</h6><input type="checkbox" id="GrlVis" value="false"></li>
+                    <div class="espacio"></div>
+                    <li class="ButInside"><h6>Size</h6><input type="number" min="0" value="10" id="TamGrl"></li>
+                    <div class="espacio"></div>
+                    <li class="ButInside"><h6>Divisions</h6><input type="number" min="0" value="10" id="DivGrl"></li>
                 </ul>
             </li>
-        </section>
-        <section class="BarTex">
+            <li class="FlexDown">
+                <div class="BotonBar DropMenu">Light</div>
+                <ul class="ContenidoBut hidden">
+                    <li class="ButInside">
+                        <h6>Color</h6>
+                        <div style="display: flex; flex-direction: column; align-items: center;">
+                            <div id="ColorWheel"></div>
+                            <form style="display: flex; flex-direction: row; margin: 0px 4px;" id="CForm">
+                                <div class="ShowColor" id="ShowC"></div>
+                                <input type="text" id="ColorValue" class="ColorInput">
+                            </form>
+                        </div>
+                    </li>
+                    <div class="espacio"></div>
+                    <li class="ButInside">
+                        <h6>Direction</h6>
+                        <select name="Directions" id="LightDir">
+                            <option value="up">Up</option>
+                            <option value="down">Down</option>
+                            <option value="right">Right</option>
+                            <option value="left">Left</option>
+                        </select>
+                    </li>
+                </ul>
+            </li>
+            <div class="BotonBar" style="color: white;">
+                Animation
+                <input type="checkbox" id="AnimToggle" >
+            </div>
+        </header>
+        <section class="BarTex" style="display: flex;">
             <div class="TexturaPrev">
-                <label for="MapC" class="SubirText">Subir</label>
-                <input type="file" id="MapC" style="display:none;">
+                <div style="display: flex; flex-direction: row; flex-wrap: wrap;">
+                    <div class="SubirText" id="EditC">Edit</div>
+                    <label for="MapC" class="SubirText">Upload</label>
+                    <input type="file" id="MapC" style="display:none;">
+                </div>
                 <div id="ImgC" class="MostrarTextura"></div>
                 <h4>Color</h4>
             </div>
             <div class="TexturaPrev">
-                <label for="MapM" class="SubirText">Subir</label>
-                <input type="file" id="MapM" style="display:none;">
+                <div style="display: flex; flex-direction: row; flex-wrap: wrap;">
+                    <div class="SubirText" id="EditM">Edit</div>
+                    <label for="MapM" class="SubirText">Upload</label>
+                    <input type="file" id="MapM" style="display:none;">
+                </div>
                 <div id="ImgM" class="MostrarTextura"></div>
                 <h4>Metalness</h4>
+                <input type="range" min="0" max="1" value="1" class="slider" step="0.1" id="MetalForce">
             </div>
             <div class="TexturaPrev">
-                <label for="MapR" class="SubirText">Subir</label>
-                <input type="file" id="MapR" style="display:none;">
+                <div style="display: flex; flex-direction: row; flex-wrap: wrap;">
+                    <div class="SubirText" id="EditR">Edit</div>
+                    <label for="MapR" class="SubirText">Upload</label>
+                    <input type="file" id="MapR" style="display:none;">
+                </div>
                 <div id="ImgR" class="MostrarTextura"></div>
                 <h4>Roughness</h4>
             </div>
             <div class="TexturaPrev">
-                <label for="MapB" class="SubirText">Subir</label>
-                <input type="file" id="MapB" style="display:none;">
-                <div id="ImgB" class="MostrarTextura"></div>
-                <h4>Bump/Height</h4>
-                <input type="range" min="0" max="5" value="1" class="slider" step="0.2" id="BumpForce">
-            </div>
-            <div class="TexturaPrev">
-                <label for="MapN" class="SubirText">Subir</label>
-                <input type="file" id="MapN" style="display:none;">
+                <div style="display: flex; flex-direction: row; flex-wrap: wrap;">
+                    <div class="SubirText" id="EditN">Edit</div>
+                    <label for="MapN" class="SubirText">Upload</label>
+                    <input type="file" id="MapN" style="display:none;">
+                </div>
                 <div id="ImgN" class="MostrarTextura"></div>
+                <input type="range" min="0" max="5" value="1" class="slider" step="0.2" id="Force">
                 <h4>Normal</h4>
-                <input type="range" min="0" max="5" value="1" class="slider" step="0.2" id="NormalForce">
             </div>
         </section>
+        <footer class="BarraAbajo">
+            <div style=" color: white;" id="SliderCont"></div>
+            <div style="display: flex; align-items: center; flex-direction: column;" id="BotonKonv">
+                <p style="color: white; font-size: 19px; margin: 5px 0px;" id="TextType">Type</p>
+                <div id="ImagenID" class="ImgEdt"></div>
+                <div style="display: flex;">
+                    <div class="SubirText" id="KonvReset">Reset</div>
+                    <div class="SubirText" id="KonvSubir">Apply</div>
+                </div>
+            </div>
+        </footer>
         <canvas id="Visualizador3D" class="Render"></canvas>
     </main>
     <script src="scriptMain.js"></script>
