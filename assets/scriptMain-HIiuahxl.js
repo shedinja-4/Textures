@@ -1,0 +1,1 @@
+document.querySelectorAll(`.DropMenu`).forEach(e=>{e.addEventListener(`click`,()=>{e.parentElement.querySelector(`.ContenidoBut`).classList.toggle(`hidden`)})});

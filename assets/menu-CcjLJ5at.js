@@ -1,1 +1,0 @@
-import{t as e}from"./RegistroLogin-BCAaq8RF.js";import{t}from"./profiles-KUZK075U.js";var n=await t((await e(`/Inicio/Login.html`)).id),r=document.getElementById(`Username`),i=document.getElementById(`Avatar`);r.textContent=n.username,n.avatar_url?i.src=`${n.avatar_url}?t=${Date.now()}`:i.src=`../Busqueda/ImgBusqueda/user.png`;
