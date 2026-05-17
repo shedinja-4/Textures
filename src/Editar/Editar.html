@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Edicion modelos 3d</title>
+    <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.183.2/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.183.2/examples/jsm/"
+      }
+    }
+    </script>
+  <script type="module" crossorigin src="/Textures/assets/editar-C7Xet3XW.js"></script>
+  <link rel="modulepreload" crossorigin href="/Textures/assets/RegistroLogin-BCAaq8RF.js">
+  <link rel="modulepreload" crossorigin href="/Textures/assets/profiles-KUZK075U.js">
+  <link rel="modulepreload" crossorigin href="/Textures/assets/modelo-DgoRucWj.js">
+  <link rel="stylesheet" crossorigin href="/Textures/assets/editar-Cd3vpBRR.css">
+  <link rel="stylesheet" crossorigin href="/Textures/assets/style-XZBz4dhY.css">
+</head>
+<body>
+
+    <iframe src="../Menu/MenuPrincipal.html" width="100%" height="60px" title="Menu-principal" scrolling="no" ></iframe>
+
+    <form class="FormularioSave hidden">
+        <div class="FormSaveSection">
+            <label for="title">Title</label>
+            <input type="text" id="title">
+            <label for="description">Description</label>
+            <textarea id="description" style="resize: none; height: 60%;" placeholder="100 letters top" maxlength="100"></textarea>
+            <button type="button" class="FormSaveBut" id="saveAs">Save</button>
+        </div>
+        <div class="FormSaveSection" style="align-items: center;">
+            <label for="PreviewSend">Preview</label>
+            <img src="" class="PrevImg" id="PreviewSend">
+        </div>
+    </form>
+
+    <main>
+        <header class="BarraArriba">
+            <li class="FlexDown">
+                <div class="BotonBar DropMenu">Import</div>
+                <ul class="ContenidoBut hidden">
+                    <li class="ButInside">
+                        <h6><label for="ArchivoOBJ" style="color: white;">Import OBJ</label></h6>
+                        <input type="file" id="ArchivoOBJ" style="display:none;">
+                    </li>
+                    <div class="espacio"></div>
+                    <li class="ButInside">
+                        <h6><label for="ArchivoFBX" style="color: white;">Import FBX</label></h6>
+                        <input type="file" id="ArchivoFBX" style="display:none;">
+                    </li>
+                    <div class="espacio"></div>
+                    <li class="ButInside">
+                        <h6><label for="ArchivoGLTF" style="color: white;">Import GLTF</label></h6>
+                        <input type="file" id="ArchivoGLTF" style="display:none;">
+                    </li>
+                </ul>
+            </li>
+            <li class="FlexDown">
+                <div class="BotonBar DropMenu">Grid</div>
+                <ul class="ContenidoBut hidden">
+                    <li class="ButInside"><h6>Show</h6><input type="checkbox" id="GrlVis" value="false"></li>
+                    <div class="espacio"></div>
+                    <li class="ButInside"><h6>Size</h6><input type="number" min="0" value="10" id="TamGrl"></li>
+                    <div class="espacio"></div>
+                    <li class="ButInside"><h6>Divisions</h6><input type="number" min="0" value="10" id="DivGrl"></li>
+                </ul>
+            </li>
+            <li class="FlexDown">
+                <div class="BotonBar DropMenu">Light</div>
+                <ul class="ContenidoBut hidden">
+                    <li class="ButInside">
+                        <h6>Color</h6>
+                        <div style="display: flex; flex-direction: column; align-items: center;">
+                            <div id="ColorWheel"></div>
+                            <form style="display: flex; flex-direction: row; margin: 0px 4px;" id="CForm">
+                                <div class="ShowColor" id="ShowC"></div>
+                                <input type="text" id="ColorValue" class="ColorInput" disabled>
+                            </form>
+                        </div>
+                    </li>
+                    <div class="espacio"></div>
+                    <li class="ButInside">
+                        <h6>Direction</h6>
+                        <select name="Directions" id="LightDir">
+                            <option value="up">Up</option>
+                            <option value="down">Down</option>
+                            <option value="right">Right</option>
+                            <option value="left">Left</option>
+                        </select>
+                    </li>
+                    <div class="espacio"></div>
+                    <div class="ButInside">
+                        <h6>Enviroment</h6>
+                        <input type="checkbox" id="EnvToggle" >
+                    </div>
+                </ul>
+            </li>
+            <div class="BotonBar" style="color: white;">
+                Animation
+                <input type="checkbox" id="AnimToggle" >
+            </div>
+            <div class="BotonBar" style="color: white;">
+                Particles
+                <input type="checkbox" id="PartToggle" >
+            </div>
+            <div class="BotonBar" style="color: white;" id="ExportButton">
+                Export .gltf
+            </div>
+            <div class="BotonBar" style="color: white;" id="SaveButton">
+                Save as
+            </div>
+        </header>
+        <section class="BarTex" style="display: flex;">
+            <div class="TexturaPrev">
+                <div style="display: flex; flex-direction: row; flex-wrap: wrap;">
+                    <div class="SubirText" id="EditC">Edit</div>
+                    <label for="MapC" class="SubirText">Upload</label>
+                    <input type="file" id="MapC" style="display:none;">
+                </div>
+                <div id="ImgC" class="MostrarTextura"></div>
+                <h4>Color</h4>
+            </div>
+            <div class="TexturaPrev">
+                <div style="display: flex; flex-direction: row; flex-wrap: wrap;">
+                    <div class="SubirText" id="EditM">Edit</div>
+                    <label for="MapM" class="SubirText">Upload</label>
+                    <input type="file" id="MapM" style="display:none;">
+                </div>
+                <div id="ImgM" class="MostrarTextura"></div>
+                <h4>Metalness</h4>
+                <input type="range" min="0" max="1" value="1" class="slider" step="0.1" id="MetalForce">
+            </div>
+            <div class="TexturaPrev">
+                <div style="display: flex; flex-direction: row; flex-wrap: wrap;">
+                    <div class="SubirText" id="EditR">Edit</div>
+                    <label for="MapR" class="SubirText">Upload</label>
+                    <input type="file" id="MapR" style="display:none;">
+                </div>
+                <div id="ImgR" class="MostrarTextura"></div>
+                <h4>Roughness</h4>
+            </div>
+            <div class="TexturaPrev">
+                <div style="display: flex; flex-direction: row; flex-wrap: wrap;">
+                    <div class="SubirText" id="EditN">Edit</div>
+                    <label for="MapN" class="SubirText">Upload</label>
+                    <input type="file" id="MapN" style="display:none;">
+                </div>
+                <div id="ImgN" class="MostrarTextura"></div>
+                <input type="range" min="0" max="5" value="1" class="slider" step="0.2" id="Force">
+                <h4>Normal</h4>
+            </div>
+        </section>
+        <footer class="BarraAbajo">
+            <div style=" color: white;" id="SliderCont"></div>
+            <div style="display: flex; align-items: center; flex-direction: column;" id="BotonKonv">
+                <p style="color: white; font-size: 19px; margin: 5px 0px;" id="TextType">Type</p>
+                <div id="ImagenID" class="ImgEdt"></div>
+                <div style="display: flex;">
+                    <div class="SubirText" id="KonvReset">Reset</div>
+                    <div class="SubirText" id="KonvSubir">Apply</div>
+                </div>
+            </div>
+        </footer>
+        <canvas id="Visualizador3D" class="Render"></canvas>
+    </main>
+    <script src="scriptMain.js"></script>
+</body>

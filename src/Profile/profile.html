@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.typekit.net/guc1ymx.css">
+    <title>Profile</title>
+  <script type="module" crossorigin src="/Textures/assets/perfil-C2h4M4QI.js"></script>
+  <link rel="modulepreload" crossorigin href="/Textures/assets/RegistroLogin-BCAaq8RF.js">
+  <link rel="modulepreload" crossorigin href="/Textures/assets/profiles-KUZK075U.js">
+  <link rel="modulepreload" crossorigin href="/Textures/assets/modelo-DgoRucWj.js">
+  <link rel="stylesheet" crossorigin href="/Textures/assets/style-XZBz4dhY.css">
+</head>
+<body style="background-image: linear-gradient(#658ECF ,#334869); overflow: visible;">
+
+    <iframe src="../Menu/MenuPrincipal.html" width="100%" height="60px" title="Menu-principal" scrolling="no" ></iframe>
+
+    <h1 class="Title">PERFIL</h1>
+    <form class="ProfileForm">
+        <section class="ProfileLeft">
+            <label for="avatar-img" style="display: flex; align-self: center;">Avatar</label>
+            <div class="ProfileImg" id="avatar-img">
+                <label for="avatar-input"><div class="EditDisable fileInp"></div></label>
+                <input type="file" accept="image/*" style="display: none;" id="avatar-input">
+            </div>
+            <label for="Location">Location</label>
+            <input type="text" readonly id="location">
+            <label for="Birthday">Website</label>
+            <input type="text" readonly id="website">
+        </section>
+        <section class="ProfileRight">
+            <div style="display: flex; justify-content: space-between;">
+                <div style="display: flex; flex-direction: column; width: 45%; gap: 2vh;">
+                    <label for="Username">Username</label>
+                    <input type="text" readonly id="username">
+                </div>
+                <div style="display: flex; flex-direction: column; width: 45%; gap: 2vh;">
+                    <label for="Nickname">Nickname</label>
+                    <input type="text" readonly id="nickname">
+                </div>
+            </div>
+            <label for="Email">E-mail</label>
+            <input type="text" readonly id="email">
+            <label for="Biography">Biography</label>
+            <textarea style="height: 100%; resize: none; padding: 2%;" placeholder="Descripción breve (max 300 palabras)" maxlength="300" id="bio"></textarea>
+        </section>
+        <p id="error"></p>
+        <footer class="ButtonsForm">
+            <button id="Restore" disabled>RESTORE</button>
+            <button id="save-btn">SAVE</button>
+        </footer>
+    </form>
+
+    <section class="slider-section light">
+          <span class="section-title">YOUR PROJECTS</span>
+
+          <div class="slider">
+            <button class="slide-btn prev">‹</button>
+            <div class="slider-track" id="sliderTrack">
+              
+            </div>
+            <button class="slide-btn next">›</button>
+          </div>
+        </section>
+
+</body>
+</html>
