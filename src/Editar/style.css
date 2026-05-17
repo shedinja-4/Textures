@@ -1,0 +1,672 @@
+ @import url('https://fonts.cdnfonts.com/css/kanit');
+
+body, html {
+  height: 100%;
+}
+
+.overflowAct{
+    overflow: visible;
+}
+
+.overflowHid{
+    overflow: hidden;
+}
+
+body{
+    background-color: #121212;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100%;
+    background-size: cover;
+}
+
+@keyframes Olas {
+  0%   {background-color: #2563EB;}
+  33%  {background-color: #059669;}
+  66%  {background-color: #DC2626;}
+  100%  {background-color: #2563EB;}
+}
+
+main{
+    position: relative;
+    background-image: radial-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0));
+    background-color: #2563EB;
+    animation-name: Olas;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+    box-shadow: 0 0 30px #A3B3C9;
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    border-radius: 2rem;
+}
+
+header.BarraArriba{
+    display: flex;
+    position: absolute;
+    width: 80%;
+    left: 0%;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-top: 25px;
+    margin-left: 25px;
+}
+
+footer.BarraAbajo{
+    display: flex;
+    position: absolute;
+    width: 40%;
+    top: 15%;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    margin-bottom: 8vh;
+    margin-left: 25px;
+}
+
+h4{
+    margin: 2px;
+    font-weight: bolder;
+    font-style: oblique;
+}
+
+h6{
+    margin: 4px;
+    font-weight: bolder;
+    font-style: oblique;
+}
+
+li{
+    list-style: none;
+}
+
+ul{
+    list-style: none;
+    padding-left: 20px;
+    margin-top: 0px;
+}
+
+.Render{
+    display: flex;
+}
+
+.espacio{
+    height: 1px;
+    background-color: #A3B3C9;
+}
+
+.ButStandar{
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+    position: absolute;
+    margin: 25px;
+    bottom: 16%;
+}
+
+.BarraDeBotones{
+    color: white;
+    position: absolute;
+    margin: 25px;
+    right: 8%;
+    top: 0%;
+}
+
+.BotonBar{
+    background-color: #101010;
+    border-radius: 1rem;
+    color: #F1F5F9;
+    padding: 10px;
+    text-align: center;
+    font-size: clamp(0.5rem, 1.1rem, 2rem);
+    box-shadow: 0 0 10px #A3B3C9;
+    width: fit-content;
+    margin-right: 10px;
+}
+
+.ButInside{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 0px;
+}
+
+.BotonBar:hover {
+    background-color: #1E1E1E;
+}
+
+.ContenidoBut{
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    column-gap: 30px;
+    margin-top: 5px;
+    margin-left: 20px;
+    background-color: #101010;
+    border-radius: 0rem 1rem 1rem 1rem;
+    color: #F1F5F9;
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+    width: fit-content;
+    box-shadow: 0 0 10px #A3B3C9;
+    z-index: 100;
+}
+
+.ColorInput{
+    width: 55px;
+}
+
+.ShowColor{
+    border-color: black;
+    border-style: double;
+    border-width: 5px;
+    width: 12px;
+    height: 12px;
+    background-color: #ffffff;
+}
+
+input[type='number']{
+    width: 30px;
+}
+
+.hidden{
+    display: none !important; 
+}
+
+.BarTex{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    border-radius: 2rem;
+    position: absolute;
+    width: 250px;
+    height: 80%;
+    padding-right: 1vw ;
+    overflow: auto;
+    right: 1%;
+    align-items: flex-end;
+
+    &::-webkit-scrollbar {
+    width: 15px;
+    background: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+    background-color: #F1F5F9;
+    border-radius: 5px;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+    background-color: #A3B3C9;
+    }
+}
+
+.TexturaPrev{
+    border-radius: 1em;
+    color: white;
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column-reverse;
+    background-color: #1E1E1E;
+    padding: 5px;
+    margin: 6px;
+    width: 80%;
+    height: 20vw;
+    box-shadow: 0 0 5px #A3B3C9;
+}
+
+.MostrarTextura{
+    border-radius: 1rem;
+    width: 100px;
+    height: 100px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #101010;
+    margin: 10px 0px;
+}
+
+.SubirText{
+    height: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 30px;
+    margin: 2px;
+    display: flex;
+    background-color: #101010;
+    border-radius: 1rem;
+    color: #F1F5F9;
+    padding: 5px 20px 5px 20px;
+    text-align: center;
+    font-size: clamp(0.2rem, 1rem, 1.5rem);
+    box-shadow: 0 0 10px #A3B3C9;
+}
+
+.ImgEdt{
+    width: 20vh;
+    height: 20vh;
+    border: double;
+    border-color: black;
+    border-width: 2vh;
+    margin-bottom: 1vh;
+}
+
+.FilterSld{
+    min-width: 20vw;
+}
+
+.ProfileForm{
+    position: relative;
+    color: #C0D8FF;
+    display: flex;
+    padding: 5vh 0px;
+    justify-content: space-evenly;
+    justify-self: center;
+    background-color: #3C557C;
+    width: 83.33vw;
+    border-radius: 8px 8px 0px 8px;
+    box-shadow: 0px 10px 8px #2B3D58;
+    font-family: 'kanit';
+    margin-bottom: 20vh;
+}
+
+.ProfileLeft{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 25%;
+    gap: 2vh;
+}
+.ProfileRight{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 55%;
+    gap: 2vh;
+}
+
+.ProfileImg{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-self: center;
+    border-width: 0.5em;
+    background-color: #496491;
+    width: 45%;
+    aspect-ratio: 1;
+    border: solid;
+    border-width: 0.3em;
+    border-radius: 1em;
+    border-color: #80AAEA;
+}
+
+.ProfileForm input, textarea {
+    color: #C0D8FF;
+    background-color: #496491;
+    height: 5vh;
+    width: 100%;
+    min-height: 30px;
+    border: solid;
+    border-width: 0.3em;
+    border-radius: 1em;
+    border-color: #80AAEA;
+}
+
+textarea::placeholder{
+    color: #80A1D6;
+}
+
+.Title{
+    font-family: 'kanit';
+    margin: 2vh 8.335vw;
+    color: #C0D8FF;
+    font-size: 2.5rem;
+}
+
+.ButtonsForm{
+    position: absolute;
+    right: 0%;
+    background-color: #3C557C;
+    width: fit-content;
+    padding: 0px 2vw 2vh 2vw;
+    box-shadow: 0px 10px 8px #2B3D58;
+    border-radius: 0px 0px 8px 8px;
+}
+
+.ButtonsForm button {
+    color: #3C557C;
+    background-color: #80AAEA;
+    font-family: 'kanit';
+    padding: 1.5vh 1.5vw;
+    border: solid;
+    border-width: 0.3em;
+    border-radius: 1em;
+    border-color: #80AAEA;
+    font-size: 1em;
+    transition-duration: 0.4s;
+}
+
+.ButtonsForm button:hover {
+    background-color: #496491;
+    color: #80AAEA;
+}
+
+.ProjectSlide{
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #C0D8FF;
+    height: 35vh;
+    width: 83.33vw;
+    border-radius: 8px;
+    margin-bottom: 10vh;
+    box-shadow: 0px 10px 8px #2B3D58;
+}
+
+.EditFormButton {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 60%;
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    height: 100%;
+    aspect-ratio: 1;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.EditEnable {
+    background-image: url(../Profile/Recursos/Done.png);
+}
+
+.EditDisable {
+    background-image: url(../Profile/Recursos/Edit.png);
+}
+
+.fileInp{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 2vw;
+    aspect-ratio: 1;
+    margin: 0.8vh;
+}
+
+#error{
+    position: absolute;
+    font-size: 14px;
+    text-align: left;
+    margin-top: 6px;
+    color: rgb(233, 223, 223);
+    font-family: 'Kanit', sans-serif;
+    left: 0%;
+    bottom: -10%;
+}
+
+button:disabled {
+    background-color: #496491;
+    color: #80AAEA;
+}
+
+.ProjectSlide_Tlt{
+    display: flex;
+    height: 20%;
+    padding: 1vh 2vw 0px 2vw;
+    background-color: #80AAEA;
+    font-size: clamp(1rem, 2.5vw, 2rem);;
+    color: #3C557C;
+    justify-self: center;
+    align-items: center;
+    text-align: center;
+    font-family: 'kanit';
+    text-shadow: #496491 0px 2px 3px;
+    border-radius: 0px 0px 1rem 1rem;
+    border-style: none solid solid solid;
+    border-width: 0.5rem;
+    border-color: #3C557C;
+}
+
+.ProjectSlide_Cnt{
+    width: 95%;
+    height: 60%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 2vh;
+    gap: 2vw;
+}
+
+.ProjectSlide_Cnt_{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: relative;
+    border-radius: clamp(8px, 2vw, 16px);
+    background-color: #597094;
+    width: 14vw;
+    height: 100%;
+    box-shadow: 0px 5px 8px #2B3D58;
+}
+
+.ProjectSlide_Cnt_ImgCont{
+    border-radius: clamp(8px, 2vw, 16px) clamp(8px, 2vw, 16px) 0px 0px;
+    background-image: linear-gradient(#90A7CD, #597094);
+    background-size: cover;
+    width: 60%;
+    height: 90%;
+}
+
+.ProjectSlide_Cnt_Img{
+    background-image: url(../Profile/Recursos/ImageNotFound.png);
+    background-size: cover;
+    aspect-ratio: 1;
+}
+
+.ProjectSlide_Cnt_Art{
+    border-radius: clamp(8px, 2vw, 16px);
+    background-color: #597094;
+    width: 14vw;
+    height: 100%;
+}
+
+.ProjectSlide_Cnt_Date{
+    border-radius: clamp(8px, 2vw, 16px);
+    background-color: #597094;
+    width: 14vw;
+    height: 100%;
+}
+
+.FormularioSave{
+    display: flex;
+    flex-direction: row;
+    border: solid;
+    border-color: #80AAEA;
+    border-width: 3px;
+    background-color: #1E1E1E;
+    border-radius: clamp(8px, 2vw, 16px);
+    top: 20%;
+    right: 25%;
+    position: absolute;
+    z-index: 2;
+    width: 50vw;
+    height: 60vh;
+    align-items: center;
+}
+
+.FormSaveSection{
+    color: #80A1D6;
+    font-family: 'kanit';
+    font-weight: bold;
+    width: 50%;
+    height: 70%;
+    padding: 3vh 2vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 2vh;
+}
+
+.FormularioSave input{
+    color: #C0D8FF;
+    background-color: #496491;
+    height: 5vh;
+    width: 100%;
+    min-height: 30px;
+    border: solid;
+    border-width: 0.3em;
+    border-radius: 1em;
+    border-color: #80AAEA;
+}
+
+.FormSaveBut{
+    color: #3C557C;
+    background-color: #80AAEA;
+    font-family: 'kanit';
+    font-weight: bold;
+    border: solid;
+    border-width: 0.3em;
+    border-radius: 1em;
+    border-color: #80AAEA;
+    width: 20%;
+    font-size: 1em;
+}
+
+.PrevImg{
+    width: 80%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border: solid;
+    border-width: 0.3em;
+    border-radius: 1em;
+    border-color: #80AAEA;
+}
+
+/* SLIDER ARCHIVOS  */
+.slider-section {
+    width: 90%;
+    margin: 40px auto;
+    padding: 30px 20px 40px;
+    border-radius: 28px;
+    position: relative;
+}
+
+
+/* Destacados  */
+.slider-section.light {
+    background: #cfe1ff;
+}
+
+/* Título */
+.section-title {
+    position: absolute;
+    top: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #aaccff;
+    padding: 6px 40px;
+    border-radius: 16px;
+    font-family: 'kanit';
+    font-size: 22px;
+    font-weight: 600;
+    color: #0e1a2b;
+}
+
+/* Slider de archivos  */
+.slider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.slider-track {
+    display: flex;
+    gap: 18px;
+    overflow-x: hidden;  
+    overflow-y: hidden;   
+    scroll-behavior: smooth;
+    width: 100%;
+}
+
+/* Botones */
+.slide-btn {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: none;
+    font-size: 26px;
+    cursor: pointer;
+    background: rgba(255,255,255,0.3);
+    color: #0e1a2b;
+}
+
+/* Tarjetas */
+.card {
+    min-width: 260px;
+    height: 170px;
+    background: linear-gradient(to bottom, #7f94b3, #5f7698);
+    border-radius: 18px;
+    padding: 14px;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,0.35),0 10px 22px rgba(0,0,0,0.25);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-shrink: 0;
+}
+.card-preview {
+    flex: 1;
+    margin: 6px;
+    background: linear-gradient(to bottom, #9eb2cc, #8298b6);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card-footer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 500;
+}
+.card-footer .dot {
+    width: 20px;
+    height: 20px;
+    background: #e1ecff;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+}
+.card-footer .name {
+    flex: 1;
+}
+.card-footer .date {
+    font-size: 13px;
+    opacity: 0.9;
+}
+
+/* Imagen archivo */
+.card img{
+    width: 150px;
+    height: auto;
+    opacity: 0.8;
+}
+
+.noCards{
+    width: 100%;
+    height: 170px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'kanit';
+    font-size: 2em;
+    text-align: center;
+}

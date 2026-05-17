@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Busqueda</title>
+    <link rel="stylesheet" href="style.css">
+    <base target="_parent">
+</head>
+
+<body>
+    <header>
+        
+        <div class="father">
+            <div class="logo">Logo</div>
+            <div class="edit">
+                <a href="../Editar/Editar.html" class="btn-editar">+ Editar</a>
+            </div>
+
+            <div class="son"><a class="text" href="../Busqueda/Busqueda.html">Navegador</a></div>
+            <div class="son"><a class="text" href="">Tutorial</a></div>
+            <div class="son"><a class="text" href="">About us</a></div>
+            <div class="son"><a class="text" href="../Busqueda/Busqueda.html#AyudaID">Ayuda</a></div>
+
+            <div  class="nav">
+                <input class="search" type="text" placeholder="Buscar..."> 
+            </div>
+            <a href="../Profile/profile.html">
+                <div class="user">
+                    <div class="user-icon">
+                        <img src="" alt="Usuario" id="Avatar">
+                    </div>
+                    <span class="user-name" id="Username"></span>
+                </div>
+            </a>
+        </div>
+            
+    </header>
+    <script type="module">
+        
+        import { requireAuth } from '../lib/RegistroLogin.js';
+        import { getProfile } from '../lib/profiles.js';
+
+
+        const user = await requireAuth('/Inicio/Login.html');
+        const profile = await getProfile(user.id)
+        const usernameMenu = document.getElementById('Username');
+        const avatarMenu = document.getElementById('Avatar');
+
+        usernameMenu.textContent = profile.username;
+
+        if (profile.avatar_url) {
+        avatarMenu.src = `${profile.avatar_url}?t=${Date.now()}`;
+        }
+        else{
+        avatarMenu.src = "../Busqueda/ImgBusqueda/user.png";
+        }
+        
+    </script>
+</body>
+</html>

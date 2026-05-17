@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Busqueda</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        
+        <div class="father">
+            <div class="logo">Logo</div>
+            <div class="edit">
+                <a href="../Editar/Editar.html" class="btn-editar">+ Editar</a>
+            </div>
+
+            <div class="son"><a class="text" href="">Navegador</a></div>
+            <div class="son"><a class="text" href="">Tutorial</a></div>
+            <div class="son"><a class="text" href="">About us</a></div>
+            <div class="son"><a class="text" href="#AyudaID">Ayuda</a></div>
+
+            <div  class="nav">
+                <input class="search" type="text" placeholder="Buscar..."> 
+            </div>
+            <div class="user" id="userBut">
+                <div class="user-icon">
+                  <img src="" alt="Usuario" id="Avatar">
+                </div>
+                <span class="user-name" id="Username"></span>
+
+                <div class="menuDesp hidden" id="desplegable"> 
+                  <button class="menuCont" type="button" id="PerConf">Configuration</button>
+                  <button class="menuCont" type="button" id="PerOut">Log out</button>
+                </div>
+            </div>
+        </div>
+            
+    </header>
+
+    <main class="container">
+
+        <div class="banner">
+            <p>¡Explora entre los proyectos e ideas de la comunidad!</p>
+        </div>
+
+        <div class="gallery">
+            <div class="gallery-container">
+                <img class="gallery-item" src="ImgBusqueda/Slide Item — 1.png" data-index="1">
+                <img class="gallery-item" src="ImgBusqueda/Slide Item — 2.png" data-index="2">
+                <img class="gallery-item" src="ImgBusqueda/Slide Item — 3.png" data-index="3">
+                <img class="gallery-item" src="ImgBusqueda/Slide Item — 4.png" data-index="4">
+                <img class="gallery-item" src="ImgBusqueda/Slide Item — 5.png" data-index="5">
+            </div>
+            <div class="gallery-controls"></div>
+        </div>
+
+        <section class="slider-section dark">
+          <span class="section-title">Recientes</span>
+
+          <div class="slider">
+            <button class="slide-btn prev">‹</button>
+            <div class="slider-track" id="sliderTrack">
+              
+            </div>
+            <button class="slide-btn next">›</button>
+          </div>
+        </section>
+
+        <section class="about-section">
+        <div class="about-container">
+          <div class="about-text">
+            <h2>Sobre Nosotros</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+               Possimus nostrum repellat rerum aperiam.
+               Dolore quo corporis ex fugiat cumque fuga 
+               beatae? Asperiores deserunt accusantium autem cum 
+               sed minus facilis obcaecati.
+              <br><br>
+               Lorem ipsum dolor sit amet consectetur adipisicing elit.
+               Error officiis veritatis quidem nam ea dolore nostrum distinctio
+               consectetur, obcaecati necessitatibus, illo quis eveniet omnis 
+               assumenda expedita incidunt rem vero? Repellendus.
+            </p>
+          </div>
+
+          <div class="about-carousel">
+            <button class="about-btn prev">‹</button>
+            <div class="about-card">
+              <div class="about-photo">
+                <img src="ImgBusqueda/archivo.png" alt="">
+              </div>
+                <span class="about-name">Nombre</span>
+            </div>
+
+            <button class="about-btn next">›</button>
+          </div>
+        </div>
+
+      </section>
+
+      <section class="help-section" id="ayuda">
+        <h2 class="help-title" id="AyudaID">Ayuda</h2>
+
+        <form class="help-container" id="helpForm">
+          <div class="help-left">
+            <label>Nombre</label>
+            <input type="text" id="helpName" placeholder="Ingresar nombre y apellidos completos" required>
+
+            <label>E-mail</label>
+            <input type="email" id="helpEmail" placeholder="Ingresar E-mail" required>
+
+            <label>Asunto</label>
+            <select id="helpSubject" required>
+              <option value="">Selecciona el contenido</option>
+              <option>Soporte técnico</option>
+              <option>Error en la plataforma</option>
+              <option>Sugerencia</option>
+              <option>Otro</option>
+            </select>
+
+            <button type="submit" class="help-btn">Subir</button>
+          </div>
+
+          <div class="help-right">
+            <label>Contenido</label>
+            <textarea id="helpMessage" maxlength="500"
+              placeholder="Descripción breve del asunto (max 500 palabras)" required></textarea>
+          </div>
+        </form>
+      </section>
+
+
+      <footer class="footer">
+        <p>Copyright © 2026 USB Systems Incorporated. All rights reserved.</p>
+        
+        <h3>Privacy.   Terms of Us.    Preferencias sobre cookies.</h3>
+      </footer>
+      <script type="module" src="script.js"></script>
+
+    </main>
+    <script type="module">
+        
+        import { requireAuth } from '../lib/RegistroLogin.js';
+        import { getProfile } from '../lib/profiles.js';
+
+
+        const user = await requireAuth('/Inicio/Login.html');
+        const profile = await getProfile(user.id)
+        const usernameMenu = document.getElementById('Username');
+        const avatarMenu = document.getElementById('Avatar');
+
+        usernameMenu.textContent = profile.username;
+
+        if (profile.avatar_url) {
+        avatarMenu.src = `${profile.avatar_url}?t=${Date.now()}`;
+        }
+        else{
+        avatarMenu.src = "./ImgBusqueda/user.png";
+        }
+        
+    </script>
+</body>
+</html>

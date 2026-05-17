@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background"></div>
+
+    <header>
+        <div class="logo">Logo</div>
+    </header>
+
+    <main class="container">
+
+    <div class="Padre">
+
+
+        <!-- FORMULARIO -->
+        <div class="card form-card">
+
+            <div class="spaceLogin">
+                <div class="textLogin">
+                    <p>Descubre las</p>
+                    <p>herramientas de la</p>
+                    <p>nueva era 3D.</p> 
+                </div>
+                
+
+            <form id="LoginForm">
+                <label>E-mail</label>
+                <input type="email" name="email">
+
+                <label>Contraseña</label>
+                <div class="password-box">
+                    <input type="password" name="password" id="Pswrd">
+                    <span id="Toggle">👁</span>
+                </div>
+                <p id="error"></p>
+
+                <button type="submit">Iniciar Sesión</button>
+
+                <a class="recover" href=""> ¿Olvidaste tu contraseña?</a>
+
+                <div class="divider">
+                     <hr>o<hr>
+                </div>
+                
+                <button class="btn outline" type="button">
+                    <a class="back-login" href="/index.html">Crear Cuenta</a>
+                </button>
+
+            </form>
+
+            </div>
+            
+        </div>
+
+    </div>
+    <script type="module" src="Login.js"></script>
+</body>
+</html>

@@ -1,0 +1,236 @@
+ @import url('https://fonts.cdnfonts.com/css/kanit');
+ @import url('https://fonts.cdnfonts.com/css/segoe-ui-4');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+    font-family: 'Kanit', sans-serif;                                              
+}
+
+body {
+    height: 100vh;
+    overflow: hidden;
+}
+
+#error{
+    font-size: 12px;
+    text-align: left;
+    margin-top: 6px;
+    color: rgb(233, 223, 223);
+    font-family: 'Kanit', sans-serif;
+}
+
+/* FONDO */
+.background {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(61, 61, 163, 0.2), rgba(87, 87, 221, 0.2)), url(ImgInicio/Fondo\ regristro.png) center/cover no-repeat;
+    z-index: -1;
+}
+
+/* HEADER */
+header {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.logo {
+    background: #ddd;
+    padding: 10px 25px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+/* CONTENEDOR */
+.container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.Padre {
+    background: url(ImgInicio/Group\ 58.png);
+    background-repeat: no-repeat;
+    background-position: top left;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center; 
+    justify-content: flex-end;
+    gap: 40px;
+    padding: 40px;
+}
+
+/* TARJETAS */
+.card {
+    backdrop-filter: blur(2px);
+    border-radius: 20px;
+    padding: 30px;
+}
+
+/* FORMULARIO */
+
+.spaceLogin{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+}
+
+.textLogin p{
+    color: #b2bcde;
+    font-size: 35px;
+    text-align: center;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+
+.form-card {
+    width: 38%;
+    margin: 40px;
+    background: rgba(8, 1, 44, 0.35);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur (12px);
+    color: white;
+
+    animation: slideInRight 0.8s ease-out;
+}
+
+.form-card h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #b2bcde;
+}
+
+.back-login {
+    font-size: 12px;
+    color: white;
+    text-align: left;
+    margin-bottom: 10px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+label {
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+input {
+    margin-top: 5px;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    background: rgba(255, 255, 255, 0.15); /* fondo semitransparente */
+    color: white;
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+}
+
+.password-box {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.password-box input {
+    width: 100%;
+    padding-right: 35px; 
+}
+
+.password-box span {
+    color: rgb(182, 171, 171);
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+}
+
+.error{
+    color: #ffe6e6;
+    font-size: 3px;
+    margin-top: 5px;
+}
+
+/* BOTÓN */
+button {
+    margin-top: 20px;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: rgb(208, 211, 255);
+    color: #211f63;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.recover{
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    margin: 10px;
+}
+
+.divider {
+    width: 100%;
+    height: 2px;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    margin: 10px 0;
+    color: #ddd;
+}
+
+.divider hr {
+  flex: 0.45;             
+  border: none;
+  height: 1px;
+  margin: 1px 0;
+  background-color: white;
+  opacity: 0.6;
+}
+
+.btn.outline {
+    background: transparent;
+    color: #d6dee6;
+    border: 1px solid #d6dee6;
+}
+
+.btn {
+    margin-top: 22px;
+    padding: 13px;
+    border-radius: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(300px); /* viene desde la derecha */
+  }
+  70% {
+    opacity: 1;
+    transform: translateX(-20px); /* se pasa un poquito (rebote) */
+  }
+  100% {
+    transform: translateX(0); /* queda en su lugar */
+  }
+}
+
+
