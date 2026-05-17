@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+  <script type="module" crossorigin src="/Textures/assets/index-DxZWE2-T.js"></script>
+  <link rel="stylesheet" crossorigin href="/Textures/assets/index-CYMZS2BU.css">
+</head>
+<body>
+
+    <div class="background"></div>
+
+    <header>
+        <div class="logo">Logo</div>
+    </header>
+
+    <main class="container">
+
+        <div class="Padre">
+
+            <!-- FORMULARIO -->
+            <div class="card form-card">
+                
+                <p>Crea tu cuenta</p>
+
+                <form id="registroForm">
+                    <label>Usuario</label>
+                    <input type="text" name="User" required>
+
+                    <label>E-mail</label>
+                    <input type="email" name="Email" required>
+
+                    <label>Contraseña</label>
+                    <div class="password-box">
+                        <input type="password" required name="Password" id="Pswrd">
+                        <span id="togglePassword">👁</span>
+                    </div>
+
+                    <label>Confirmar contraseña</label>
+                    <input type="password" required name="PasswordReq">
+                    <p id="error"></p>
+
+                    <button type="submit">Registrarse</button>
+
+                    <div class="divider">
+                        <hr>o<hr>
+                    </div>
+                    
+
+                    <button class="btn outline" type="button">
+                        <a class="back-login" href="./src/Inicio/Login.html">Iniciar sesion</a>
+                    </button>
+                </form>
+            </div>
+
+        </div>
+
+    </main>
+
+</body>
+</html>
